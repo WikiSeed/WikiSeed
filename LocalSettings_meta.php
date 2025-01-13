@@ -21,8 +21,8 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
-$wgSitename = 'Your Wiki';
-$wgMetaNamespace = 'Your_Wiki';
+$wgSitename = 'WikiSeed';
+$wgMetaNamespace = 'WikiSeed';
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
@@ -32,7 +32,7 @@ $wgMetaNamespace = 'Your_Wiki';
 $wgScriptPath = '';
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = 'https://yourdomain.tld';
+$wgServer = 'https://meta.gungale.wiki';
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
@@ -42,10 +42,10 @@ $wgUsePathInfo = true;
 ## The URL paths to the logo.  Make sure you change this from the default,
 ## or else you'll overwrite your logo when you upgrade!
 $wgLogos = [
-	'1x' => "$wgResourceBasePath/resources/assets/wikilogo.png",
-	'icon' => "$wgResourceBasePath/resources/assets/wikilogo.ico",
+	'1x' => "$wgResourceBasePath/resources/assets/WikiSeedLogo.png",
+	'icon' => "$wgResourceBasePath/resources/assets/WikiSeedLogo.png",
 ];
-$wgFavicon = "$wgResourceBasePath/resources/assets/wikilogo.ico";
+$wgFavicon = "$wgResourceBasePath/resources/assets/WikiSeedLogo.png";
 
 ## UPO means: this is also a user preference option
 
@@ -54,8 +54,8 @@ $wgEnableUserEmail = false; # UPO
 
 $wgEmailConfirmToEdit = true;
 
-$wgEmergencyContact = '';
-$wgPasswordSender = '';
+$wgEmergencyContact = 'admin@gungale.wiki';
+$wgPasswordSender = 'admin@gungale.wiki';
 
 $wgEnotifUserTalk = false; # UPO
 $wgEnotifWatchlist = false; # UPO
@@ -69,7 +69,7 @@ $wgDBuser = '';
 $wgDBpassword = '';
 
 # MySQL specific settings
-$wgDBprefix = "mwke_";
+$wgDBprefix = "";
 $wgDBssl = false;
 
 # MySQL table options to use during installation or update
@@ -137,6 +137,8 @@ $wgDefaultSkin = 'vector';
 # Enabled skins.
 # The following skins were automatically enabled:
 wfLoadSkin( 'MinervaNeue' );
+// wfLoadSkin( 'MonoBook' );
+// wfLoadSkin( 'Timeless' );
 wfLoadSkin( 'Vector' );
 
 wfLoadExtension( 'ParserFunctions' );
@@ -155,9 +157,6 @@ wfLoadExtension( 'Nuke' );
 wfLoadExtension( 'Cite' );
 wfLoadExtension( 'CodeMirror' );
 
-wfLoadExtension( 'discord' );
-$wgDiscordWebhookURL = [ 'wikis_discord_webhook_url' ];
-
 wfLoadExtension( 'DummyFandoomMainpageTags' );
 wfLoadExtension( 'Scribunto' );
 $wgScribuntoDefaultEngine = 'luastandalone';
@@ -165,30 +164,6 @@ $wgScribuntoDefaultEngine = 'luastandalone';
 # Add more configuration options below.
 
 $wgTmpDirectory = "/home/roblamvb/tmp_ndlgjs";
-
-$wgFooterIcons = [
-	"poweredby" => [
-		"mediawiki" => [
-			// Defaults to point at
-			// "$wgResourceBasePath/resources/assets/poweredby_mediawiki_88x31.png"
-			// plus srcset for 1.5x, 2x resolution variants.
-			"src" => "/resources/assets/Powered_by_MediaWiki.png",
-			"url" => "//www.mediawiki.org/",
-			"alt" => "Powered by MediaWiki",
-		]
-	],
-	"hostedby" => [
-		"mediawiki" => [
-		    // Defaults to point at
-			// "$wgResourceBasePath/resources/assets/poweredby_mediawiki_88x31.png"
-			// plus srcset for 1.5x, 2x resolution variants.
-			"src" => "/resources/assets/hosted_by_wikiseed.png",
-			"url" => "//gungale.wiki/w/Gun_Gale_Online_Wiki:WikiSeed",
-			"alt" => "Hosted by Wikiseed",   
-			"title" => "Hosted by Wikiseed",   
-		]
-	],
-];
 
 $wgDefaultMobileSkin = 'minerva';
 
@@ -204,3 +179,5 @@ $wgCaptchaTriggers['sendemail'] = true;
 $wgEnableMetaDescriptionFunctions = true;
 
 $wgGroupPermissions['*']['edit'] = false;
+
+$wgShowExceptionDetails = true;
