@@ -21,8 +21,8 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
-$wgSitename = 'WikiSeed';
-$wgMetaNamespace = 'WikiSeed';
+$wgSitename = 'WikiSeed Wiki';
+$wgMetaNamespace = 'WikiSeed_Wiki';
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
@@ -32,7 +32,7 @@ $wgMetaNamespace = 'WikiSeed';
 $wgScriptPath = '';
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = 'https://meta.gungale.wiki';
+$wgServer = 'https://example.com';
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
@@ -42,10 +42,10 @@ $wgUsePathInfo = true;
 ## The URL paths to the logo.  Make sure you change this from the default,
 ## or else you'll overwrite your logo when you upgrade!
 $wgLogos = [
-	'1x' => "$wgResourceBasePath/resources/assets/WikiSeedLogo.png",
-	'icon' => "$wgResourceBasePath/resources/assets/WikiSeedLogo.png",
+	'1x' => "$wgResourceBasePath/resources/assets/ggowikilogo.png",
+	'icon' => "$wgResourceBasePath/resources/assets/ggowikilogo.ico",
 ];
-$wgFavicon = "$wgResourceBasePath/resources/assets/WikiSeedLogo.png";
+$wgFavicon = "$wgResourceBasePath/resources/assets/ggowikilogo.ico";
 
 ## UPO means: this is also a user preference option
 
@@ -54,8 +54,8 @@ $wgEnableUserEmail = false; # UPO
 
 $wgEmailConfirmToEdit = true;
 
-$wgEmergencyContact = 'admin@gungale.wiki';
-$wgPasswordSender = 'admin@gungale.wiki';
+$wgEmergencyContact = 'example@example.com';
+$wgPasswordSender = 'example@example.com';
 
 $wgEnotifUserTalk = false; # UPO
 $wgEnotifWatchlist = false; # UPO
@@ -157,6 +157,9 @@ wfLoadExtension( 'Nuke' );
 wfLoadExtension( 'Cite' );
 wfLoadExtension( 'CodeMirror' );
 
+wfLoadExtension( 'discord' );
+$wgDiscordWebhookURL = [ '' ];
+
 wfLoadExtension( 'DummyFandoomMainpageTags' );
 wfLoadExtension( 'Scribunto' );
 $wgScribuntoDefaultEngine = 'luastandalone';
@@ -179,5 +182,3 @@ $wgCaptchaTriggers['sendemail'] = true;
 $wgEnableMetaDescriptionFunctions = true;
 
 $wgGroupPermissions['*']['edit'] = false;
-
-$wgShowExceptionDetails = true;

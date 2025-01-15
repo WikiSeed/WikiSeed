@@ -1,7 +1,6 @@
 <?php
 $wikis = [
-    'gungale.wiki' => 'ggowiki',
-    'meta.gungale.wiki' => 'meta',
+    'example.com' => 'wiki',
 ];
 if ( defined( 'MW_DB' ) ) {
     // Automatically set from --wiki option to maintenance scripts
@@ -43,3 +42,7 @@ $wgFooterIcons = [
 		]
 	],
 ];
+
+wfLoadExtension( 'Interwiki' );
+// To grant a group (e.g., the "sysop" group) permission to edit interwiki data
+$wgGroupPermissions['sysop']['interwiki'] = true;
